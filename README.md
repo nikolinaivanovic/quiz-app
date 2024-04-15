@@ -1,6 +1,5 @@
 # PROJEKAT
-
-
+Prvo treba klonirati repostiorium - git clone 
 ## FRONTEND
 ```
 cd .\frontend\
