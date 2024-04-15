@@ -1,5 +1,7 @@
 # PROJEKAT
-Prvo treba klonirati repostiorium - git clone 
+
+Prvo treba klonirati repostiorium - git clone https://github.com/nikolinaivanovic/quiz-app.git
+
 ## FRONTEND
 ```
 cd .\frontend\
