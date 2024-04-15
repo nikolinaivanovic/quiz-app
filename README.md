@@ -4,8 +4,10 @@ PROJEKAT
 
 FRONTEND
 
-cd .\frontend\
+#cd .\frontend\
 npm install
 npm run dev -- --host
 
 BACKEND
+
+
