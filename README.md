@@ -1,13 +1,13 @@
-PROJEKAT
+# PROJEKAT
 
 
 
-FRONTEND
-
-#cd .\frontend\
+## FRONTEND
+```
+cd .\frontend\
 npm install
-npm run dev -- --host#
-
-BACKEND
+npm run dev -- --host
+```
+## BACKEND
 
 
