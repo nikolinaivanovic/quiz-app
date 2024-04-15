@@ -1,7 +1,6 @@
 # PROJEKAT
 
 
-
 ## FRONTEND
 ```
 cd .\frontend\
