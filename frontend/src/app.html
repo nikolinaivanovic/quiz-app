@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login i Signup Buttons</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+	</head>
+	<body data-sveltekit-preload-data="hover" data-theme="skeleton">
 
-<div class="container">
-    <div class="row">
-        <div class="nine columns">
-        </div>
-        <div class="three columns" id="login-signup">
-            <a href="login.html" class="button-primary login-btn">Prijavi se</a>
-            <a href="registracija/registracija.html" class="button signup-btn">Registr
-
+		<script>
+			function handleLogin() {
+			  console.log('Login clicked');
+			}
+		  
+			function handleRegister() {
+			  console.log('Register clicked');
+			}
+		  </script>
+		  
+		  <style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			  font-family: Arial, sans-serif;
+			  background-image: linear-gradient(to right, #8576ff, #7bc9ff);
+			  display: flex;
+			  justify-content: flex-end;
+			  align-items: flex-start;
+			  padding: 20px;
+			  height: 100%;
+			}
+		  
+			.container {
+			  display: flex;
+			  align-items: flex-end;
+			}
+		  
+			button {
+			  margin-left: 10px;
+			  padding: 8px 16px;
+			  cursor: pointer;
+			  border: none;
+			  border-radius: 5px;
+			  color: white;
+			  background-color: transparent;
+			  transition: all 0.3s ease;
+			}
+		  
+			button:hover {
+			  background-color: rgba(255, 255, 255, 0.2);
+			  transform: scale(1.1);
+			  background-color: #8B008B;
+			}
+		  </style>
+		  
+		  <div class="container">
+			<button on:click={handleLogin}>Login</button>
+			<button on:click={handleRegister}>Register</button>
+		  </div>
+	</body>
+</html>
