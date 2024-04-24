@@ -6,10 +6,10 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 db = mysql.connector.connect(
-    host="localhost",
-    user="newuser",
-    password="Nikolina123@",
-    database="geeklogin"
+    host='localhost',
+    user='root',
+    password='a@',
+    database='geeklogin'
 )
 cursor = db.cursor()
 
@@ -23,17 +23,22 @@ def home():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    if request.method == 'POST':
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
         cursor.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, password))
-        db.commit()
+        account = cursor.fetchone()
+        if account:
+            return f'Profil već postoji.'
+        else:
+            return f'Profil uspešno napravljen'
+            mysql.connector.commit()
         return redirect(url_for('login'))
     return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
+    if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
         username = request.form['username']
         password = request.form['password']
         cursor.execute("SELECT * FROM users WHERE username = %s AND password = %s", (username, password))
@@ -46,8 +51,8 @@ def login():
 
 @app.route('/logout')
 def logout():
+    session.pop('loggedin', None)
     session.pop('username', None)
-    return redirect(url_for('home'))
-
+    return redirect(url_for('login'))
 if __name__ == '__main__':
     app.run(debug=True)
